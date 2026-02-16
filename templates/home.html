@@ -17,23 +17,26 @@
         }
 
         body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #e0e7ff, #f5f7ff);
-        }
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0e7ff, #f5f7ff);
+    padding: 40px;     /* more outer space → less zoomed look */
+   }
 
-        .container {
-            width: 1100px;
-            max-width: 95%;
-            height: 650px;
-            display: flex;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            background: #fff;
-        }
+
+    .container {
+    width: 70%;            /* medium width */
+    max-width: 1100px;    /* not too large */
+    height: 65vh;         /* medium height */
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background: #fff;
+   }
+
 
         /* LEFT PANEL */
         .left-panel {
@@ -159,10 +162,11 @@
 
     <!-- LEFT SIDE -->
     <div class="left-panel">
-        <h1>Welcome Back!</h1>
+        <h1>Student Performance Predictor</h1>
         <p>
             Enter your personal details
         </p>
+        
     </div>
 
     <!-- RIGHT SIDE -->

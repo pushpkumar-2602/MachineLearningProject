@@ -5,249 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Exam Performance</title>
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!DOCTYPE html>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance</title>
 
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, #e0e7ff, #f5f7ff);
-        }
+```
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #e0e7ff, #f5f7ff);
+    padding: 40px;     /* more outer space → less zoomed look */
+   }
+
+
+    .container {
+    width: 70%;            /* medium width */
+    max-width: 1100px;    /* not too large */
+    height: 65vh;         /* medium height */
+    display: flex;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    background: #fff;
+   }
+
+    
+
+    /* LEFT PANEL */
+    .left-panel {
+        flex: 1;
+        background: linear-gradient(135deg, #5f2eea, #3b1bb3);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 40px;
+        text-align: center;
+        border-top-right-radius: 120px;
+        border-bottom-right-radius: 120px;
+    }
+
+    .left-panel h1 {
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+
+    .left-panel p {
+        font-size: 15px;
+        opacity: 0.9;
+        line-height: 1.6;
+        max-width: 300px;
+    }
+
+    /* RIGHT PANEL */
+    .right-panel {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px 60px;
+        text-align: center;
+    }
+
+    .right-panel h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+        color: #111;
+    }
+
+    .right-panel p {
+        font-size: 15px;
+        color: #555;
+        margin-bottom: 30px;
+        max-width: 400px;
+        line-height: 1.6;
+    }
+
+    /* BUTTON */
+    .start-btn {
+        padding: 14px 35px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #5f2eea, #3b1bb3);
+        color: white;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .start-btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
         .container {
-            width: 1100px;
-            max-width: 95%;
-            height: 650px;
-            display: flex;
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            background: #fff;
-        }
-
-        /* LEFT PANEL */
-        .left-panel {
-            flex: 1;
-            background: linear-gradient(135deg, #5f2eea, #3b1bb3);
-            color: white;
-            display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 40px;
-            text-align: center;
-            border-top-right-radius: 120px;
-            border-bottom-right-radius: 120px;
+            height: auto;
         }
 
-        .left-panel h1 {
-            font-size: 38px;
-            margin-bottom: 20px;
+        .left-panel {
+            border-radius: 0;
+            padding: 40px 20px;
         }
 
-        .left-panel p {
-            font-size: 15px;
-            opacity: 0.9;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            max-width: 280px;
-        }
-
-        /* RIGHT PANEL */
         .right-panel {
-            flex: 1.2;
-            padding: 50px 60px;
-            overflow-y: auto;
+            padding: 30px 20px;
         }
+    }
+</style>
+```
 
-        .right-panel h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #111;
-        }
-
-        
-
-        .form {
-            margin-top: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            font-size: 13px;
-            color: #555;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 14px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            background: #f7f7f7;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .form-control:focus {
-            border-color: #5f2eea;
-            outline: none;
-            background: #fff;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 30px;
-            background: linear-gradient(135deg, #5f2eea, #3b1bb3);
-            color: white;
-            font-size: 15px;
-            font-weight: 500;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: 0.3s;
-        }
-
-        .submit-btn:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .prediction {
-            margin-top: 20px;
-            font-weight: 500;
-            color: #333;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .container {
-                flex-direction: column;
-                height: auto;
-            }
-
-            .left-panel {
-                border-radius: 0;
-                padding: 40px 20px;
-            }
-
-            .right-panel {
-                padding: 30px 20px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- LEFT SIDE -->
-    <div class="left-panel">
-        <h1>Welcome Back!</h1>
-        <p>
-            Enter your personal details 
-        </p>
-       
-    </div>
+```
+<!-- LEFT SIDE -->
+<div class="left-panel">
+    <h1>Welcome 👋</h1>
+    <p>
+        Student Exam Performance Prediction System  
+        built using Machine Learning to estimate Maths scores
+        based on student details.
+    </p>
+</div>
 
-    <!-- RIGHT SIDE -->
-    <div class="right-panel">
+<!-- RIGHT SIDE -->
+<div class="right-panel">
 
-        
+    <h2>Student Performance Predictor</h2>
 
-        
+    <p>
+        Click below to enter student academic and personal details.
+    </p>
 
-        <form class="form" action="{{ url_for('predict_datapoint')}}" method="post">
+    <!-- Navigation Button -->
+   <a href="{{ url_for('predict_datapoint') }}" class="start-btn">
+    Get Started →
+</a>
 
-            <div class="form-group">
-                <label>Gender</label>
-                <select class="form-control" name="gender" required>
-                    <option disabled selected>Select Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
 
-            <div class="form-group">
-                <label>Race or Ethnicity</label>
-                <select class="form-control" name="ethnicity" required>
-                    <option disabled selected>Select Ethnicity</option>
-                    <option value="group A">Group A</option>
-                    <option value="group B">Group B</option>
-                    <option value="group C">Group C</option>
-                    <option value="group D">Group D</option>
-                    <option value="group E">Group E</option>
-                </select>
-            </div>
 
-            <div class="form-group">
-                <label>Parental Level of Education</label>
-                <select class="form-control" name="parental_level_of_education" required>
-                    <option disabled selected>Select Parent Education</option>
-                    <option value="associate's degree">Associate's Degree</option>
-                    <option value="bachelor's degree">Bachelor's Degree</option>
-                    <option value="high school">High School</option>
-                    <option value="master's degree">Master's Degree</option>
-                    <option value="some college">Some College</option>
-                    <option value="some high school">Some High School</option>
-                </select>
-            </div>
+</div>
+```
 
-            <div class="form-group">
-                <label>Lunch Type</label>
-                <select class="form-control" name="lunch" required>
-                    <option disabled selected>Select Lunch Type</option>
-                    <option value="free/reduced">Free/Reduced</option>
-                    <option value="standard">Standard</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Test Preparation Course</label>
-                <select class="form-control" name="test_preparation_course" required>
-                    <option disabled selected>Select Course</option>
-                    <option value="none">None</option>
-                    <option value="completed">Completed</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Reading Score</label>
-                <input class="form-control" type="number" name="reading_score" min="0" max="100" required>
-            </div>
-
-            <div class="form-group">
-                <label>Writing Score</label>
-                <input class="form-control" type="number" name="writing_score" min="0" max="100" required>
-            </div>
-
-            <button class="submit-btn" type="submit">
-                Predict Maths Score
-            </button>
-
-        </form>
-
-        <div class="prediction">
-            {{ results }}
-        </div>
-
-    </div>
 </div>
 
 </body>
