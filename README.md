@@ -54,33 +54,35 @@ This helps in analyzing student performance trends and understanding key influen
 
 ## 📂 Project Structure
 src
-├── __init__.py
-├── __pycache__
-│   ├── __init__.cpython-312.pyc
-│   ├── exception.cpython-312.pyc
-│   ├── logger.cpython-312.pyc
-│   └── utils.cpython-312.pyc
+├── __init__
 ├── components
-│   ├── __init__.py
+│   ├── __init__
 │   ├── __pycache__
-│   │   ├── __init__.cpython-312.pyc
-│   │   ├── data_ingestion.cpython-312.pyc
-│   │   ├── data_transformation.cpython-312.pyc
-│   │   └── model_trainer.cpython-312.pyc
-│   ├── data_ingestion.py
-│   ├── data_transformation.py
-│   └── model_trainer.py
-├── exception.py
-├── logger.py
+│   │   ├── __init__
+│   │   ├── data_ingestion
+│   │   ├── data_transformation
+│   │   └── model_trainer
+│   ├── data_ingestion
+│   ├── data_transformation
+│   └── model_trainer
+├── exception
+├── logger
 ├── pipeline
-│   ├── __init__.py
+│   ├── __init__
 │   ├── __pycache__
-│   │   ├── __init__.cpython-312.pyc
-│   │   └── predict_pipeline.cpython-312.pyc
-│   ├── predict_pipeline.py
-│   └── train_pipeline.py
-└── utils.py
-|___README.md
+│   │   ├── __init__
+│   │   └── predict_pipeline
+│   ├── predict_pipeline
+│   └── train_pipeline
+└── utils
+|-- templates
+|    |-- home
+|    |──  index
+|-- gitignore
+|-- application
+|-- README
+|-- requirements
+|-- setup
 
 ---
 
@@ -211,8 +213,5 @@ Best performing model selected based on:
 ---
 
 ## 👨‍💻 Author
-
-Pushp Kumar  
-Machine Learning & AI Enthusiast  
-
+Pushp Kumar   
 ---
