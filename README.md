@@ -53,36 +53,33 @@ This helps in analyzing student performance trends and understanding key influen
 ---
 
 ## 📂 Project Structure
-src
-├── __init__
-├── components
-│   ├── __init__
-│   ├── __pycache__
-│   │   ├── __init__
-│   │   ├── data_ingestion
-│   │   ├── data_transformation
-│   │   └── model_trainer
-│   ├── data_ingestion
-│   ├── data_transformation
-│   └── model_trainer
-├── exception
-├── logger
-├── pipeline
-│   ├── __init__
-│   ├── __pycache__
-│   │   ├── __init__
-│   │   └── predict_pipeline
-│   ├── predict_pipeline
-│   └── train_pipeline
-└── utils
-|-- templates
-|    |-- home
-|    |──  index
-|-- gitignore
-|-- application
-|-- README
-|-- requirements
-|-- setup
+```
+📦 MachineLearningProject
+│
+├── 📁 src
+│   ├── 📁 components
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   │
+│   ├── 📁 pipeline
+│   │   ├── predict_pipeline.py
+│   │   └── train_pipeline.py
+│   │
+│   ├── exception.py
+│   ├── logger.py
+│   └── utils.py
+│
+├── 📁 templates
+│   ├── index.html
+│   └── home.html
+│
+├── application.py
+├── requirements.txt
+├── setup.py
+├── README.md
+└── .gitignore
+```
 
 ---
 
