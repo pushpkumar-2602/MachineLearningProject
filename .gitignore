@@ -220,5 +220,5 @@ venv/
 # Logs
 *.log
 
-# Jupyter Notebook checkpoints
+# Jupyter
 .ipynb_checkpoints/
